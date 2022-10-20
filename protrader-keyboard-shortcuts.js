@@ -13,6 +13,8 @@
     'use strict';
 
     function doc_keyUp(e) {
+
+        console.log("key pressed: " + e.key);
         /*
      Scan result
      */
@@ -26,6 +28,18 @@
         }
 
         /*
+     Date
+     */
+        // forwards
+        if (e.ctrlKey && e.key === '.') {
+            document.getElementsByClassName("btn-default")[45].click();
+        }
+        // backwards
+        if (e.ctrlKey && e.key === ',') {
+            document.getElementsByClassName("btn-default")[44].click();
+        }
+
+        /*
      Watchlist
      */
         // forwards
@@ -33,28 +47,16 @@
             document.getElementsByClassName("btn-default")[57].click();
         }
         // backwards
-        if (e.altKey && e.key === 'ArrowRight') {
+        if (e.altKey && e.key === 'ArrowLeft') {
             document.getElementsByClassName("btn-default")[56].click();
         }
         // add
-        if (e.altKey && e.key === 'a') {
+        if (e.altKey && e.key === '.') {
             document.getElementsByClassName("btn-default")[58].click();
         }
         // remove
-        if (e.altKey && e.key === 'r') {
+        if (e.altKey && e.key === ',') {
             document.getElementsByClassName("btn-default")[59].click();
-        }
-
-        /*
-     Date
-     */
-        // forwards
-        if (e.shiftKey && e.key === 'ArrowRight') {
-            document.getElementsByClassName("btn-default")[45].click();
-        }
-        // backwards
-        if (e.shiftKey && e.key === 'ArrowRight') {
-            document.getElementsByClassName("btn-default")[44].click();
         }
     }
     document.addEventListener('keyup', doc_keyUp, false);
